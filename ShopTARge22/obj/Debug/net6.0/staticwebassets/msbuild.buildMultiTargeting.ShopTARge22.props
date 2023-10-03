@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\ShopTARge22.props" />
+</Project>
