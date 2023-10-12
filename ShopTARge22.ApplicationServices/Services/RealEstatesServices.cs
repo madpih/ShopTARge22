@@ -23,7 +23,6 @@ namespace ShopTARge22.ApplicationServices.Services
         }
 
 
-
         public async Task<RealEstate> Create(RealEstateDto dto)
         {
             RealEstate realEstate = new();

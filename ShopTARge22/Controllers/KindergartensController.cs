@@ -1,26 +1,25 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using ShopTARge22.ApplicationServices.Services;
 using ShopTARge22.Core.Dto;
 using ShopTARge22.Core.ServiceInterface;
 using ShopTARge22.Data;
 using ShopTARge22.Models.Kindergartens;
-using ShopTARge22.Models.RealEstates;
+
 
 
 namespace ShopTARge22.Controllers
 {
-    public class KindergartenController : Controller
+    public class KindergartensController : Controller
     {
         private readonly ShopTARge22Context _context;
         private readonly IKindergartensServices _kindergartensServices;
         
 
 
-        public KindergartenController
+        public KindergartensController
             (
                 ShopTARge22Context context,
-                KindergartensServices kindergartens
+                IKindergartensServices kindergartens
                 
             )
         {
@@ -117,7 +116,6 @@ namespace ShopTARge22.Controllers
                 return NotFound();
             }
 
-            
             var vm = new KindergartenCreateUpdateViewModel();
 
             vm.Id = kindergarten.Id;
@@ -127,7 +125,6 @@ namespace ShopTARge22.Controllers
             vm.Teacher = kindergarten.Teacher;
             vm.CreatedAt = kindergarten.CreatedAt;
             vm.UpdatedAt = kindergarten.UpdatedAt;
-
 
             return View("CreateUpdate", vm);
         }
@@ -144,7 +141,7 @@ namespace ShopTARge22.Controllers
                 KindergartenName = vm.KindergartenName,
                 Teacher = vm.Teacher,
                 CreatedAt = vm.CreatedAt,
-                UpdatedAt = vm.UpdatedAt,
+                UpdatedAt = vm.UpdatedAt
 
             };
 
@@ -168,7 +165,6 @@ namespace ShopTARge22.Controllers
                 return NotFound();
             }
 
-            
             var vm = new KindergartenDeleteViewModel();
 
             vm.Id = kindergarten.Id;

@@ -45,13 +45,13 @@ namespace ShopTARge22.ApplicationServices.Services
         {
             Kindergarten kindergarten = new();
 
-            kindergarten.Id = Guid.NewGuid();
+            kindergarten.Id = dto.Id;
             kindergarten.GroupName = dto.GroupName;
             kindergarten.ChildrenCount = dto.ChildrenCount;
             kindergarten.KindergartenName = dto.KindergartenName;
             kindergarten.Teacher = dto.Teacher;
-            kindergarten.UpdatedAt = DateTime.Now;
             kindergarten.CreatedAt = dto.CreatedAt;
+            kindergarten.UpdatedAt = DateTime.Now;
 
 
             _context.Kindergartens.Update(kindergarten);
