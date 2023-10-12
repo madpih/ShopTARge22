@@ -1,12 +1,8 @@
 ﻿
-using System.ComponentModel.DataAnnotations;
-
-
-namespace ShopTARge22.Core.Domain
+namespace ShopTARge22.Core.Dto
 {
-    public class Kindergarten
+    public class KindergartenDto
     {
-        [Key]
         public Guid? Id { get; set; }
         public string GroupName { get; set; }
         public int ChildrenCount { get; set; }
@@ -14,7 +10,7 @@ namespace ShopTARge22.Core.Domain
         public string Teacher { get; set; }
 
         public DateTime CreatedAt { get; set; }
-        public DateTime UpdatedAt { get; set;}
+        public DateTime UpdatedAt { get; set; }
 
 
     }
