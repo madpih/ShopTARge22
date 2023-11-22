@@ -3,12 +3,7 @@ using ShopTARge22.Core.Domain;
 using ShopTARge22.Core.Dto;
 using ShopTARge22.Core.ServiceInterface;
 using ShopTARge22.Data.Migrations;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Sockets;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace ShopTARge22.RealEstateTest
 {
@@ -135,6 +130,22 @@ namespace ShopTARge22.RealEstateTest
             //Assert.Equal(result.CreatedAt, createRealEstate.CreatedAt);
         }
 
+        [Fact]
+        //ei updeidi datat, kui id on null
+        public async Task ShouldNot_UpdateRealEstate_WhenNotUpdateData()
+        {
+            RealEstateDto dto = MockRealEstateData();
+            var createRealestate = await Svc<IRealEstatesServices>().Create(dto);
+
+            RealEstateDto nullUpdate = MockNullRealEstate();
+            var result = await Svc<IRealEstatesServices>().Update(nullUpdate);
+
+            var nullId = nullUpdate.Id;
+
+            Assert.True(dto.Id == nullId);
+        }
+
+
         private RealEstateDto MockRealEstateData() //nö libaandmebaas
         {
             RealEstateDto realEstate = new()
@@ -152,7 +163,8 @@ namespace ShopTARge22.RealEstateTest
 
             return realEstate;
         }
-
+        
+      
         private RealEstateDto MockUpdateRealEstateData()
         {
             RealEstateDto realEstate = new()
@@ -169,5 +181,23 @@ namespace ShopTARge22.RealEstateTest
             };
             return realEstate;
         }
+
+        private RealEstateDto MockNullRealEstate()
+        {
+            RealEstateDto nullDto = new()
+            {
+                Id = null,
+                Address = "Address123",
+                SizeSqrM = 12.5f,
+                RoomCount = 123,
+                Floor = 123,
+                BuildingType = "BuildingType123",
+                BuiltInYear = DateTime.Now.AddYears(-1),
+                CreatedAt= DateTime.Now.AddYears(-1),
+                UpdatedAt= DateTime.Now.AddYears(-1),
+            };
+            return nullDto;
+        }
+
     }
 }

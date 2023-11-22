@@ -13,6 +13,11 @@ builder.Services.AddScoped<ISpaceshipsServices, SpaceshipsServices>();
 builder.Services.AddScoped<IFileServices, FileServices>();
 builder.Services.AddScoped<IRealEstatesServices, RealEstatesServices>();
 builder.Services.AddScoped<IKindergartensServices, KindergartensServices>();
+builder.Services.AddScoped<IWeatherForecastServices, WeatherForecastServices>();
+builder.Services.AddScoped<IChuckNorrisJokesServices, ChuckNorrisJokesServices>();
+builder.Services.AddScoped<ICoctailServices, CoctailServices>();
+builder.Services.AddScoped<IAccuWeatherServices, AccuWeatherServices>();
+
 
 
 

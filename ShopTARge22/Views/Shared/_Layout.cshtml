@@ -7,52 +7,126 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/ShopTARge22.styles.css" asp-append-version="true" />
-</head>
-<body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">ShopTARge22</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Spaceships" asp-action="Index">Spaceships</a>
-                        </li>
-                        <li class="nav-item">
-                        <a class="nav-link text-dark" asp-area="" asp-controller="realestates" asp-action="Index">Real Estates</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="kindergartens" asp-action="Index">Kindergartens</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
+    <link rel="stylesheet" href="~/assets/css/main.css" asp-append-version="true" />
+    <noscript><link rel="stylesheet" href="~/assets/css/noscript.css" asp-append-version="true" /></noscript>
 
-    <footer class="border-top footer text-muted">
+</head>
+
+<body class="is-preload">
+    <div id="wrapper">
+
+        <header id="header">
+            <div class="inner m-5">
+                <!-- Logo -->
+                <span class="title">
+                     <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">ShopTARge22</a>
+                </span>
+                <!-- Nav -->
+                <nav>
+                    <ul>
+                        <li><a href="#menu">Menu</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+    <!-- Menu -->
+        <nav id="menu">
+            <h2>Menu</h2>
+                <ul>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-area="" asp-controller="Spaceships" asp-action="Index">Spaceships</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-area="" asp-controller="realestates" asp-action="Index">Real Estates</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-area="" asp-controller="kindergartens" asp-action="Index">Kindergartens</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-area="" asp-controller="WeatherForecasts" asp-action="Index">Weather Forecasts</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-area="" asp-controller="ChuckNorrisJokes" asp-action="Index">Chuck Norris Jokes</a>
+                    </li>
+                     <li class="nav-item">
+                         <a class="nav-link" asp-area="" asp-controller="Coctails" asp-action="Index">Coctail</a>
+                      </li>
+                     <li class="nav-item">
+                        <a class="nav-link" asp-area="" asp-controller="AccuWeather" asp-action="Index">AccuWeather</a>
+                     </li>
+                </ul>
+        </nav>
+
+
         <div class="container">
-            &copy; 2023 - ShopTARge22 - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            <main role="main" class="pb-3">
+                @RenderBody()
+            </main>
         </div>
-    </footer>
+
+        <!-- Footer -->
+        <footer id="footer">
+            <div class="inner">
+                <section>
+                    <h2>Get in touch</h2>
+                    <form method="post" action="#">
+                        <div class="fields">
+                            <div class="field half">
+                                <input type="text" name="name" id="name" placeholder="Name" />
+                            </div>
+                            <div class="field half">
+                                <input type="email" name="email" id="email" placeholder="Email" />
+                            </div>
+                            <div class="field">
+                                <textarea name="message" id="message" placeholder="Message"></textarea>
+                            </div>
+                        </div>
+                        <ul class="actions">
+                            <li><input type="submit" value="Send" class="primary" /></li>
+                        </ul>
+                    </form>
+                </section>
+
+                <section>
+                    <h2>Follow</h2>
+                    <ul class="icons">
+                        <li><a href="#" class="icon brands style2 fa-twitter"><span class="label">Twitter</span></a></li>
+                        <li><a href="#" class="icon brands style2 fa-facebook-f"><span class="label">Facebook</span></a></li>
+                        <li><a href="#" class="icon brands style2 fa-instagram"><span class="label">Instagram</span></a></li>
+                        <li><a href="#" class="icon brands style2 fa-dribbble"><span class="label">Dribbble</span></a></li>
+                        <li><a href="#" class="icon brands style2 fa-github"><span class="label">GitHub</span></a></li>
+                        <li><a href="#" class="icon brands style2 fa-500px"><span class="label">500px</span></a></li>
+                        <li><a href="#" class="icon solid style2 fa-phone"><span class="label">Phone</span></a></li>
+                        <li><a href="#" class="icon solid style2 fa-envelope"><span class="label">Email</span></a></li>
+                    </ul>
+                </section>
+
+                <ul class="copyright">
+                        &copy; 2023 - ShopTARge22 - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                </ul>
+            </div>
+
+           
+        </footer>
+   </div>
+
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+
+    <script src="~/assets/js/jquery.min.js" asp-append-version="true"></script>
+    <script src="~/assets/js/browser.min.js" asp-append-version="true"></script>
+    <script src="~/assets/js/breakpoints.min.js" asp-append-version="true"></script>
+    <script src="~/assets/js/util.js" asp-append-version="true"></script>
+    <script src="~/assets/js/main.js" asp-append-version="true"></script>
+
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
