@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using ShopTARge22.ApplicationServices.Services;
 using ShopTARge22.Core.Dto.CoctailsDtos;
 using ShopTARge22.Core.ServiceInterface;
@@ -8,7 +9,7 @@ using ShopTARge22.Models.Forecast;
 namespace ShopTARge22.Controllers
 
 {
-   
+	[Authorize]
     public class CoctailsController : Controller
     {
 		private readonly ICoctailServices _coctailServices;

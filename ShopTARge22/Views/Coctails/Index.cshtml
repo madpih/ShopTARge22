@@ -1,24 +1,29 @@
 ﻿@model ShopTARge22.Models.Coctails.SearchCoctailViewModel
 
-<h1>
-    Search Coctail
-</h1>
+      <h2>
+         Search Coctail
+      </h2>
 
-<div class="container">
-    <form method="post">
-        <div class="container">
-            <div class="form-group col-md-offset-3 col-md-5">
-                <h2>Find a coctail receipe</h2>
-                <label asp-for="SearchCoctail" style="font-family: Arial"></label>
-                <input asp-for="SearchCoctail" class="form-control" />
-                <span asp-validation-for="SearchCoctail" class="text-danger"></span>
-            </div>
-        </div>
+        <form method="post">
+                <div class="form-group col-md-offset-3 col-md-5">
+                    <h2>Find a coctail receipe</h2>
+                    <label asp-for="SearchCoctail" style="font-family: Arial"></label>
+                    <input asp-for="SearchCoctail" class="form-control" />
+                    <span asp-validation-for="SearchCoctail" class="text-danger"></span>
+                </div>
 
-        <div class="container">
-            <div class="form-group col-md-offsett cpl-md-5 my-2">
-                <button asp-controller="Coctails" asp-action="searchCoctails" class="btn btn-primary">Search</button>
-            </div>
-        </div>
-    </form>
-</div>
+                <div class="form-group col-md-offsett col-md-5 my-2">
+                    <button asp-controller="Coctails" asp-action="searchCoctails" class="btn btn-primary">Search</button>
+                </div>
+        </form>
+
+<!-- Scripts -->
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="~/js/site.js" asp-append-version="true"></script>
+
+<script src="~/assets/js/jquery.min.js" asp-append-version="true"></script>
+<script src="~/assets/js/browser.min.js" asp-append-version="true"></script>
+<script src="~/assets/js/breakpoints.min.js" asp-append-version="true"></script>
+<script src="~/assets/js/util.js" asp-append-version="true"></script>
+<script src="~/assets/js/main.js" asp-append-version="true"></script>
