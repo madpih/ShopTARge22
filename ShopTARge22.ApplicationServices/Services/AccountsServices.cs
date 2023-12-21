@@ -32,7 +32,7 @@ namespace ShopTARge22.ApplicationServices.Services
         {
             var user = new ApplicationUser
             {
-                //username ja email on IdentityUseri sees olemas
+                //username ja email on IdentityUseri seest
                 UserName = dto.Email,
                 Email = dto.Email,
                 City = dto.City

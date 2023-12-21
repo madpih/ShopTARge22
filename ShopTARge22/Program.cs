@@ -6,8 +6,7 @@ using Microsoft.Extensions.FileProviders;
 using Microsoft.AspNetCore.SignalR;
 using ShopTARge22.Hubs;
 using Microsoft.AspNetCore.Identity;
-
-
+using ShopTARge22.Core.Domain;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -24,13 +23,15 @@ builder.Services.AddScoped<ICoctailServices, CoctailServices>();
 builder.Services.AddScoped<IAccuWeatherServices, AccuWeatherServices>();
 builder.Services.AddScoped<IEmailServices, EmailServices>();
 builder.Services.AddSignalR();
-builder.Services.AddScoped<IAccountsServices, AccountsServices>();
 
 builder.Services.AddDbContext<ShopTARge22Context>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
-	.AddEntityFrameworkStores<ShopTARge22Context>();
+builder.Services.AddIdentity<ApplicationUser, IdentityRole>(options => 
+options.SignIn.RequireConfirmedAccount = true)
+	.AddEntityFrameworkStores<ShopTARge22Context>()
+    .AddDefaultTokenProviders()
+    .AddDefaultUI();
 
 //builder.Services.AddDefaultIdentity<IdentityUser>()
 //	.AddEntityFrameworkStores<ShopTARge22Context>();
